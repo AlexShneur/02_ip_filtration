@@ -7,16 +7,20 @@ project(02_ip_filtration VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
-add_executable(02_ip_filtration_cli 02_ip_filtration.cpp)
+add_executable(02_ip_filtration 02_ip_filtration.cpp)
 
-set_target_properties(02_ip_filtration_cli PROPERTIES
+set_target_properties(02_ip_filtration PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
 
+target_include_directories(02_ip_filtration
+    PRIVATE "${CMAKE_BINARY_DIR}"
+)
+
 #configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
 
-install(TARGETS 02_ip_filtration_cli RUNTIME DESTINATION bin)
+install(TARGETS 02_ip_filtration RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
