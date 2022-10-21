@@ -20,6 +20,7 @@ target_include_directories(02_ip_filtration
 
 #configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
 
+
 install(TARGETS 02_ip_filtration RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
