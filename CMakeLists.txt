@@ -14,7 +14,7 @@ set_target_properties(02_ip_filtration_cli PROPERTIES
     CXX_STANDARD_REQUIRED ON
 )
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
+#configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
 
 install(TARGETS 02_ip_filtration_cli RUNTIME DESTINATION bin)
 
