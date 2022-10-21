@@ -16,6 +16,7 @@ jobs:
       - run: sudo apt-get update
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
+      - run: ls
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -28,7 +29,6 @@ jobs:
           prerelease: false
       - name: Upload Release Asset
         id: upload-release-asset
-      -run: ls
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
