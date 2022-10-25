@@ -7,7 +7,7 @@ project(02_ip_filtration VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
-add_executable(02_ip_filtration 02_ip_filtration.cpp)
+add_executable(02_ip_filtration 02_ip_filtration.cpp 02_ip_filtration.h)
 
 set_target_properties(02_ip_filtration PROPERTIES
     CXX_STANDARD 14
@@ -17,9 +17,6 @@ set_target_properties(02_ip_filtration PROPERTIES
 target_include_directories(02_ip_filtration
     PRIVATE "${CMAKE_BINARY_DIR}"
 )
-
-#configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ip_filter.tsv ${CMAKE_CURRENT_BINARY_DIR}/ip_filter.tsv COPYONLY)
-
 
 install(TARGETS 02_ip_filtration RUNTIME DESTINATION bin)
 
