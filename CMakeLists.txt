@@ -7,13 +7,7 @@ project(02_ip_filtration VERSION ${PROJECT_VERSION})
 
 configure_file(version.h.in version.h)
 
-add_executable(02_ip_filtration 
-				main.cpp main.h
-				filter.cpp filter.h
-				print.cpp print.h
-				readData.cpp readData.h
-				sort.cpp sort.h
-				split.cpp split.h)
+add_executable(02_ip_filtration 02_ip_filtration.cpp 02_ip_filtration.h)
 
 set_target_properties(02_ip_filtration PROPERTIES
     CXX_STANDARD 14
